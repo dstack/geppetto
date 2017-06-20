@@ -1,0 +1,13 @@
+.DS_Store
+dist/electron/*
+dist/web/*
+dist/server/*
+build/*
+!build/icons
+node_modules/*
+!node_modules/pixi-live2d/*
+npm-debug.log
+npm-debug.log.*
+thumbs.db
+!.gitkeep
+conf/conf.json

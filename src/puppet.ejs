@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script src="static/js/live2d.min.js"></script>
+    <% if (htmlWebpackPlugin.options.nodeModules) { %>
+      <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+      <script>
+        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
+      </script>
+    <% } %>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Set `__static` path to static files in production -->
+    <script>
+      if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static')
+    </script>
+    <!-- webpack builds are automatically injected -->
+  </body>
+</html>

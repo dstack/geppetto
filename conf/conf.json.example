@@ -1,0 +1,11 @@
+{
+  "canvasWidth": 350,
+  "canvasHeight": 450,
+  "animationCapTargetFps": 30,
+  "PeerServerKey": "[peerjs server key]",
+  "PeerConfig": {
+    "iceServers": [
+      { "url": "stun:stun.l.google.com:19302" }
+    ]
+  }
+}
